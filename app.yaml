@@ -1,0 +1,16 @@
+runtime: python311
+
+handlers:
+- url: /
+  static_files: www/index.html
+  upload: www/index.html
+  secure: always
+  http_headers:
+    Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+- url: /(.*)
+  static_files: www/\1
+  upload: www/(.*)
+  secure: always
+  http_headers:
+    Strict-Transport-Security: max-age=31536000; includeSubDomains
