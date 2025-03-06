@@ -11,11 +11,24 @@ import { Mail, Github } from "lucide-react";
 
 export default function Home() {
     const [textIndex, setTextIndex] = useState(0);
-    const [isVisible, setIsVisible] = useState(true);
+    const [isVisible, setIsVisible] = useState(false);
     const scrollingTexts = ["write code", "make music"];
+
+    // Initial fade in effect
+    useEffect(() => {
+        // Short delay before initial fade in
+        const initialTimeout = setTimeout(() => {
+            setIsVisible(true);
+        }, 300);
+
+        return () => clearTimeout(initialTimeout);
+    }, []); // Empty dependency array means this runs once on mount
 
     // Effect to cycle through texts with fade transitions
     useEffect(() => {
+        // Skip setting up the interval until after initial render
+        if (!isVisible) return;
+
         const intervalId = setInterval(() => {
             // Start fade out
             setIsVisible(false);
@@ -26,12 +39,12 @@ export default function Home() {
                 setIsVisible(true);
             }, 1000); // Wait 1 second after fade out starts
 
-        }, 6000); // Full cycle every 6 seconds
+        }, 4000); // Full cycle every 4 seconds
 
         return () => {
             clearInterval(intervalId);
         };
-    }, []);
+    }, [isVisible]); // Depend on isVisible so interval starts after initial fade in
 
     return (
         <section className="flex flex-col items-center justify-center min-h-screen py-8 md:py-10">
