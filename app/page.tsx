@@ -2,8 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@heroui/button";
+
 import { Card, CardBody } from "@heroui/card";
+
 import { title } from "@/components/primitives";
+
 import { Mail, Github } from "lucide-react";
 
 export default function Home() {
@@ -23,7 +26,7 @@ export default function Home() {
                 setIsVisible(true);
             }, 1000); // Wait 1 second after fade out starts
 
-        }, 6000); // Full cycle every 10 seconds
+        }, 6000); // Full cycle every 6 seconds
 
         return () => {
             clearInterval(intervalId);
@@ -37,11 +40,11 @@ export default function Home() {
                     Hi. I'm Ashe, and I{" "}
                     <span className="relative inline-block min-w-[180px]">
                         <span
-                            className={`text-primary transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+                            className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
                         >
-                            {scrollingTexts[textIndex]}
+                            <span className="text-primary">{scrollingTexts[textIndex]}</span><span className="text-foreground">.</span>
                         </span>
-                    </span>.
+                    </span>
                 </h1>
 
                 {/* Construction Notice Card */}
