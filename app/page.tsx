@@ -7,7 +7,9 @@ import { Card, CardBody } from "@heroui/card";
 
 import { title } from "@/components/primitives";
 
-import { Mail, Github } from "lucide-react";
+import { Mail } from "lucide-react";
+
+import { siGithub } from "simple-icons";
 
 export default function Home() {
     const [textIndex, setTextIndex] = useState(0);
@@ -86,7 +88,6 @@ export default function Home() {
                     >
                         Email me
                     </Button>
-
                     <Button
                         as="a"
                         href="https://github.com/itsvari"
@@ -95,7 +96,16 @@ export default function Home() {
                         variant="shadow"
                         color="default"
                         radius="full"
-                        startContent={<Github size={18} />}
+                        startContent={
+                            <svg 
+                                width="18" 
+                                height="18" 
+                                viewBox="0 0 24 24" 
+                                fill="currentColor"
+                            >
+                                <path d={siGithub.path} />
+                            </svg>
+                        }
                     >
                         GitHub
                     </Button>
