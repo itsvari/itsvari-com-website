@@ -97,10 +97,10 @@ export default function Home() {
                         color="default"
                         radius="full"
                         startContent={
-                            <svg 
-                                width="18" 
-                                height="18" 
-                                viewBox="0 0 24 24" 
+                            <svg
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
                                 fill="currentColor"
                             >
                                 <path d={siGithub.path} />
