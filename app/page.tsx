@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import { Button } from "@heroui/button";
+import { useState, useEffect } from 'react';
+import { Button } from '@heroui/button';
 
-import { Card, CardBody } from "@heroui/card";
+import { Card, CardBody } from '@heroui/card';
 
-import { title } from "@/components/primitives";
+import { title } from '@/components/primitives';
 
-import { Mail } from "lucide-react";
+import { Mail } from 'lucide-react';
 
-import { siGithub } from "simple-icons";
+import { siGithub } from 'simple-icons';
 
 export default function Home() {
     const [textIndex, setTextIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
-    const scrollingTexts = ["write code", "make music"];
+    const scrollingTexts = ['write code', 'make music'];
 
     // Initial fade in effect
     useEffect(() => {
@@ -37,10 +37,11 @@ export default function Home() {
 
             // After fade out completes, change text and fade in
             setTimeout(() => {
-                setTextIndex((prevIndex) => (prevIndex + 1) % scrollingTexts.length);
+                setTextIndex(
+                    (prevIndex) => (prevIndex + 1) % scrollingTexts.length,
+                );
                 setIsVisible(true);
             }, 1000); // Wait 1 second after fade out starts
-
         }, 4000); // Full cycle every 4 seconds
 
         return () => {
@@ -51,13 +52,16 @@ export default function Home() {
     return (
         <section className="flex flex-col items-center justify-center min-h-screen py-8 md:py-10">
             <div className="max-w-2xl mx-auto px-6 text-left">
-                <h1 className={`${title({ size: "lg" })} mb-8`}>
-                    Hi. I'm Ashe, and I{" "}
+                <h1 className={`${title({ size: 'lg' })} mb-8`}>
+                    Hi. I'm Ashe, and I{' '}
                     <span className="relative inline-block min-w-[180px]">
                         <span
                             className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
                         >
-                            <span className="text-primary">{scrollingTexts[textIndex]}</span><span className="text-foreground">.</span>
+                            <span className="text-primary">
+                                {scrollingTexts[textIndex]}
+                            </span>
+                            <span className="text-foreground">.</span>
                         </span>
                     </span>
                 </h1>
@@ -69,10 +73,17 @@ export default function Home() {
                 >
                     <CardBody>
                         <div className="flex items-center gap-2">
-                            <span role="img" aria-label="construction" className="text-small">
+                            <span
+                                role="img"
+                                aria-label="construction"
+                                className="text-small"
+                            >
                                 🚧
                             </span>
-                            <p className="text-small">The rest of this website is still under construction. Pardon the dust!</p>
+                            <p className="text-small">
+                                The rest of this website is still under
+                                construction. Pardon the dust!
+                            </p>
                         </div>
                     </CardBody>
                 </Card>
