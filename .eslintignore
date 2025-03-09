@@ -17,7 +17,3 @@ build
 !jest.config.js
 !plopfile.js
 !react-shim.js
-!tsup.config.ts
-app/*
-components/*
-config/*
