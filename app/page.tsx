@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@heroui/button";
-import { Card, CardBody } from "@heroui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Mail } from "lucide-react";
 import { siGithub } from "simple-icons";
+import Link from "next/link";
 
 import { title } from "@/components/primitives";
 
@@ -60,41 +61,39 @@ export default function Home() {
         </h1>
 
         {/* Construction Notice Card */}
-        <Card
-          className="my-8 border-2 border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20"
-          shadow="sm"
-        >
-          <CardBody>
-            <div className="flex items-center gap-2">
-              <span aria-label="construction" className="text-small" role="img">
-                🚧
-              </span>
-              <p className="text-small">
-                The rest of this website is still under construction. Pardon the
-                dust!
-              </p>
-            </div>
-          </CardBody>
+        <Card className="my-8 border-2 border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20 shadow-sm">
+          <CardContent className="p-6 flex items-center gap-2">
+            <span aria-label="construction" className="text-small" role="img">
+              🚧
+            </span>
+            <p className="text-small">
+              The rest of this website is still under construction. Pardon the
+              dust!
+            </p>
+          </CardContent>
         </Card>
 
         <div className="flex flex-wrap gap-4 mt-12">
           <Button
-            as="a"
-            color="primary"
-            href="mailto:contact@itsvari.com"
-            radius="full"
-            startContent={<Mail size={18} />}
-            variant="shadow"
+            asChild
+            className="rounded-full"
+            variant="default"
           >
-            Email me
+            <a href="mailto:contact@itsvari.com">
+              <Mail size={18} />
+              Email me
+            </a>
           </Button>
           <Button
-            as="a"
-            color="default"
-            href="https://github.com/itsvari"
-            radius="full"
-            rel="noopener noreferrer"
-            startContent={
+            asChild
+            className="rounded-full"
+            variant="secondary"
+          >
+            <a
+              href="https://github.com/itsvari"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg
                 fill="currentColor"
                 height="18"
@@ -103,11 +102,8 @@ export default function Home() {
               >
                 <path d={siGithub.path} />
               </svg>
-            }
-            target="_blank"
-            variant="shadow"
-          >
-            GitHub
+              GitHub
+            </a>
           </Button>
         </div>
       </div>
