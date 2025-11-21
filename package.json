@@ -9,9 +9,13 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "npx serve@latest out",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
     "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.13.1",
     "@radix-ui/react-slot": "^1.2.4",
     "@react-aria/ssr": "3.9.7",
     "@react-aria/visually-hidden": "3.8.19",
@@ -51,6 +55,7 @@
     "prettier": "^3.3.3",
     "tailwind-variants": "0.3.0",
     "tailwindcss": "^4.1.17",
-    "typescript": "5.6.3"
+    "typescript": "5.6.3",
+    "wrangler": "^4.50.0"
   }
 }
