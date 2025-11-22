@@ -1,7 +1,8 @@
 main = ".open-next/worker.js"
 name = "itsvari-com-website"
-compatibility_date = "2025-03-25"
-compatibility_flags = ["nodejs_compat"]
+compatibility_date = "2025-11-17"
+compatibility_flags = ["nodejs_compat_v2"]
+workers_dev = true
 
 [assets]
 directory = ".open-next/assets"
@@ -10,3 +11,18 @@ binding = "ASSETS"
 [[routes]]
 pattern = "itsvari.com"
 custom_domain = true
+
+[observability]
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
+
+[observability.traces]
+enabled = true
+persist = true
+head_sampling_rate = 1
+
+[placement]
+mode = "smart"
