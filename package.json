@@ -15,7 +15,7 @@
         "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
     },
     "dependencies": {
-        "@opennextjs/cloudflare": "^1.16.3",
+        "@opennextjs/cloudflare": "^1.16.5",
         "@radix-ui/react-slot": "^1.2.4",
         "@react-aria/ssr": "^3.9.7",
         "@react-aria/visually-hidden": "^3.8.19",
