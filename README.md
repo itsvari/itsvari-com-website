@@ -1,3 +1,3 @@
 # itsvari-com-website
 
-This is the code for my [personal portfolio website](https://itsvari.com), built with Next.JS + HeroUI and deployed on Azure Static Web Apps.
+Personal portfolio website at [itsvari.com](https://itsvari.com), built with Next.js + shadcn/ui and deployed on Cloudflare Workers.
